@@ -18,7 +18,7 @@ public class CalculatorServiceImplParameterTest {
 
     @MethodSource("provideArgumentsForCalculatorTests")
     @ParameterizedTest
-    public void shouldReturnCorrectResultOfSummation(int num1, int num2) {
+    public void shouldReturnCorrectResultOfSummation(Integer num1, Integer num2) {
         assertEquals(num1 + num2, out.plus(num1, num2));
     }
 
