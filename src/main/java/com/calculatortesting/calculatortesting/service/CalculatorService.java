@@ -4,7 +4,7 @@ public interface CalculatorService {
 
     String welcome();
 
-    Integer plus(Integer num1, Integer num2);
+    Integer plus(int num1, int num2);
 
     int minus(int num1, int num2);
 

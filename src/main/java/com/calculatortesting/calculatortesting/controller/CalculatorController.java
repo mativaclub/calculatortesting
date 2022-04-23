@@ -38,9 +38,6 @@ public class CalculatorController {
 
     @GetMapping(path = "/divide")
     public int divide(@RequestParam Integer num1, @RequestParam Integer num2) {
-//        if (num1 == null || num2 == null) {
-//            return "Can't proceed without a number";
-//        }
         return calculatorService.divide(num1, num2);
     }
 
