@@ -22,31 +22,24 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/plus")
-    public String plus(@RequestParam int num1, @RequestParam int num2) {
+    public Integer plus(@RequestParam int num1, @RequestParam int num2) {
         return calculatorService.plus(num1, num2);
     }
 
     @GetMapping(path = "/minus")
-    public String minus(@RequestParam int num1, @RequestParam int num2) {
+    public int minus(@RequestParam int num1, @RequestParam int num2) {
         return calculatorService.minus(num1, num2);
     }
 
     @GetMapping(path = "/multiply")
-    public String multiply(@RequestParam int num1, @RequestParam int num2) {
+    public int multiply(@RequestParam int num1, @RequestParam int num2) {
         return calculatorService.multiply(num1, num2);
     }
 
     @GetMapping(path = "/divide")
-    public String divide(@RequestParam Integer num1, @RequestParam Integer num2) {
-        if (num1 == null || num2 == null) {
-            return "Can't proceed without a number";
-        }
-        if (num2 == 0) {
-            return "Division by 0 is not possible";
-        }
+    public int divide(@RequestParam Integer num1, @RequestParam Integer num2) {
         return calculatorService.divide(num1, num2);
     }
 
 }
 
-//    public String divide(@RequestParam(name="num1", required=false) Integer num1, @RequestParam("num2") Integer num2) {
