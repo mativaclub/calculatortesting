@@ -7,14 +7,16 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static com.calculatortesting.calculatortesting.CalculatorServiceImplTestConstants.ONE;
-import static com.calculatortesting.calculatortesting.CalculatorServiceImplTestConstants.TWO;
+import static com.calculatortesting.calculatortesting.CalculatorServiceImplTestConstants.*;
+import static com.calculatortesting.calculatortesting.CalculatorServiceImplTestConstants.FOUR;
+import static javax.swing.plaf.synth.Region.TREE;
 import static org.assertj.core.internal.bytebuddy.implementation.bytecode.StackSize.ZERO;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorServiceImplParameterTest {
 
     private final CalculatorServiceImpl out = new CalculatorServiceImpl();
+
 
     @MethodSource("provideArgumentsForCalculatorTests")
     @ParameterizedTest
@@ -42,11 +44,13 @@ public class CalculatorServiceImplParameterTest {
 
     public static Stream<Arguments> provideArgumentsForCalculatorTests() {
         return Stream.of(
-                Arguments.of(0, ONE),
-                Arguments.of(0, TWO),
+                Arguments.of(THREE, ONE),
+                Arguments.of(ZERO, TWO),
                 Arguments.of(ONE, ONE),
                 Arguments.of(ONE, TWO),
-                Arguments.of(TWO, TWO)
+                Arguments.of(TWO, TWO),
+                Arguments.of(FOUR, TWO)
         );
     }
+
 }
